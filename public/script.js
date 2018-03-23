@@ -13,6 +13,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 // test github
+
+// emz test github
 function login(){
 
                  var emailAddress = document.getElementById("e_mail").value;
