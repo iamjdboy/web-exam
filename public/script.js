@@ -15,6 +15,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 // test github
 
 // emz test github
+
+//emz test github 2
 function login(){
 
                  var emailAddress = document.getElementById("e_mail").value;
