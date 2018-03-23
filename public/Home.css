@@ -1,0 +1,136 @@
+body {
+     background-image: url("blue.jpg");
+     font-family: 'Work Sans', sans-serif;
+}
+
+a {
+     font-size: 15px;
+     font-family: 'Mina', sans-serif;
+     text-decoration: none;
+     color: blue;
+}
+
+a:hover{
+     color: #66CCFF;
+     text-decoration: underline;
+}
+
+input {
+     font-family: 'Play', sans-serif;
+     width: 30%;
+     height: 30px;
+     font-weight: 1000px;
+     border-radius: 10px;
+     margin-top: 12px;
+     transition: 0.9s;
+     -moz-box-shadow:inset 0 0 3px #000000;
+     text-align-last: center;
+}
+
+input:focus {
+    background-color: #66CCFF;
+}
+
+button:hover {
+     opacity: 0.5;
+     background-color: #66CCFF;
+}
+
+a:hover {
+     opacity: 0.5;
+     color: #66CCFF;
+}
+
+/*button {
+     font-family: 'Russo One', sans-serif;
+     background-color:  #2794DC;
+     border-radius: 15px;
+     font-size: 20px;
+     color: white;
+     height: 50px;
+     width: 100%;
+     margin: 8px 0;
+     margin-left: 20px;
+     border: 1px solid #66CCFF;
+     -webkit-transition: 0.3s;
+     -moz-transition: 0.3s;
+     cursor: pointer;
+}*/
+.account button, .account1 button {
+     font-family: 'Russo One', sans-serif;
+     background-color:  #2794DC;
+     border-radius: 15px;
+     font-size: 20px;
+     color: white;
+     height: 50px;
+     width: 100%;
+     margin: 8px 0;
+     margin-left: 20px;
+     -webkit-transition: 0.3s;
+     -moz-transition: 0.3s;
+}
+
+#container {
+     background-image: url("white.jpg");
+     border-radius: 10px;
+     border: 1px solid #0000;
+     opacity: 0.6;
+     height: 610px;
+     width: 1000px;
+     margin-left: 190px;
+     margin-top: 40px;
+}
+
+#logo {
+     float: left;
+}
+
+#inlogo {
+     height: 200px;
+     width: 200px;
+     margin-left: 200px;
+     margin-top: 150px;
+}
+
+#inacc{
+     height: 200px;
+     width: 210px;
+     margin-top: 50px;
+}
+
+.account {
+     border: 1px solid #0000;
+     margin-left: 280px;
+     margin-top: 80px;
+}
+
+.account1 {
+     border: 1px solid #0000;
+     width: 300px;
+     margin-left: 280px;
+     margin-top: 80px;
+}
+
+.space {
+     float: left;
+     width: 650px;
+     margin-top: 10px;
+}
+
+#footer {
+     background-color: black;
+     border-bottom-left-radius: 10px;
+     border-bottom-right-radius: 10px;
+     height: 50px;
+     width: 1000px;
+     margin-top: 210px;
+     margin-left: 0px;
+}
+
+p {
+     border: 1px solid #0000;
+     font-family: 'Montserrat', sans-serif;
+     color: white;
+     margin-left: 1px;
+     padding: 15px;
+}

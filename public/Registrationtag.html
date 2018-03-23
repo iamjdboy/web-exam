@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<title> Register </title>
+     <head>
+     <link rel="icon" type="image/png" href="Land.png">
+     <link rel="stylesheet" type="text/css" href="Registrationtag.css">
+     <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+     </head>
+     <body>
+          <div id="container">
+               <div id="header">
+                    <div id="h1">
+                          <div align="center" />
+                          <h1> Mangyaring punan ang form na ito. </h1>
+                    </div>
+               </div>
+               <div id="goback">
+                    <p><a href="index.html"> BUMALIK SA KANINANG PAHINA </p></a>
+               </div>
+               <div id="leftside">
+                    <div class="stanza">
+                         <input type=email placeholder="Wastong E-mail Address" id="e_mail" required/></br>
+                         <input type=password placeholder="Ilagay ang iyong password" id="p_word" required/>
+                    </div>
+                    <div class="stanza">
+                         <input type="text" placeholder="Pangalan"  id="fname" />
+                         <input type="text" placeholder="Apelyido"  id="lname" />
+                    </div>
+               </div>
+
+               <div id="rightside">
+                         <div class="stanza1">
+                              <input type="text" placeholder="Address" id="address" />
+                         </div>
+                         <div class="stanza1">
+                              <input type="number" placeholder="  Contact No." id="contact" />
+                         </div>
+                        <!-- <div class="stanza3">
+                              <input type="radio" name="gender" value="male" id="male" required> Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <input type="radio" name="gender" value="female" id="female" required> Female
+                         </div>-->
+               </div>
+          </div>
+               <button type="button" onclick="writeUserData()"> Mag-rehistro na ngayon </button>
+               <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+                         <script>
+                           // Initialize Firebase
+                           var config = {
+                             apiKey: "AIzaSyDZy-n6Cg_tzAIwxXs0wC4Nna23Kg5aZgc",
+                             authDomain: "ltothesis-cd030.firebaseapp.com",
+                             databaseURL: "https://ltothesis-cd030.firebaseio.com",
+                             projectId: "ltothesis-cd030",
+                             storageBucket: "ltothesis-cd030.appspot.com",
+                             messagingSenderId: "683555559035"
+                           };
+                           firebase.initializeApp(config);
+                           var database = firebase.database();
+
+
+
+                         </script>
+
+               <script src="script.js"></script>
+     </body>
+</html>

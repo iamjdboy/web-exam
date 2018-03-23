@@ -1,0 +1,25 @@
+body {
+     background-image: url("blue.jpg");
+     font-family: 'Work Sans', sans-serif;
+}
+
+#container {
+     border-radius: 10px;
+     background-color: white;
+     height: 800px;
+     width: 600px;
+     opacity: 0.4;
+     margin-left: 350px;
+}
+
+#insideh1{
+     border-top-left-radius: 10px;
+     border-top-right-radius: 10px;
+     background-color: #2980B9;
+     color: white;
+     font-family: 'Arvo', serif;
+}
+
+h1 {
+     text-align: center;
+}

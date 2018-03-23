@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <title> Home </title>
+          <link rel="icon" type="image/png" href="Land.png">
+          <link rel="stylesheet" type="text/css" href="Home.css">
+          <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+     </head>
+     <body>
+               <div id="container">
+                    <div id="inlogo">
+                         <div id="logo">
+                              <img height=250px; width=200px; src="Land.png">
+                         </div>
+
+                         <div id="user" class="account">
+                              <div id="inacc">
+                                   <div class="space">
+                                   <img height=20px; width=20px; src="human.png">
+                                   <input type="email" placeholder="Email" id="e_mail" />
+                                   </div>
+                                   <div class="space">
+                                   <img height=20px; width=20px; src="lock.png">
+                                   <input type="password" placeholder="Password" id="p_word" />
+                                   </div>
+                                   <a href="ForgotPassword.html">Forgot Password?</a>&nbsp;&nbsp;
+                                   <a href="Registration.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register</a>
+                                   <button onclick="login()"> LOGIN </button>
+                              </div>
+                         </div>
+                         <div id="loggedin" class="account1">
+                                <h3>Welcome User</h3>
+                                <p>Welcome. You're currently logged in.</p>
+                                <button onclick="logout()">Logout</button>
+                         </div>
+                         </div>
+                         <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+                                             <script>
+                                               // Initialize Firebase
+                                               var config = {
+                                                 apiKey: "AIzaSyDZy-n6Cg_tzAIwxXs0wC4Nna23Kg5aZgc",
+                                                 authDomain: "ltothesis-cd030.firebaseapp.com",
+                                                 databaseURL: "https://ltothesis-cd030.firebaseio.com",
+                                                 projectId: "ltothesis-cd030",
+                                                 storageBucket: "ltothesis-cd030.appspot.com",
+                                                 messagingSenderId: "683555559035"
+                                               };
+                                                firebase.initializeApp(config);
+                                             var database = firebase.database();
+
+                                             </script>
+                         <script src="script.js"></script>
+     </body>
+</html>

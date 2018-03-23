@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <title> Home </title>
+          <link rel="icon" type="image/png" href="Land.png">
+          <link rel="stylesheet" type="text/css" href="Home.css">
+          <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+     </head>
+     <body>
+               <div id="container">
+                    <div id="inlogo">
+                         <div id="logo">
+                              <img height=250px; width=200px; src="Land.png">
+                         </div>
+                         <div id="user" class="account">
+                              <div id="inacc">
+                                   <div class="space">
+                                   <img height=20px; width=20px; src="human.png">
+                                   <input type="email" placeholder="Email" id="e_mail" />
+                                   </div>
+                                   <div class="space">
+                                   <img height=20px; width=20px; src="Lock.png">
+                                   <input type="password" placeholder="Password" id="p_word" />
+                                   </div>
+                                   <a href="ForgotPasswordtag.html">Nakalimutan ang password?</a>
+                                   <a href="Registrationtag.html">Mag-rehistro</a>
+                                   <button onclick="login()"> MAG-LOGIN </button>
+                              </div>
+                         </div>
+                         <div id="loggedin" class="account1">
+                              <h3>Maligayang pagdating User</h3>
+                              Kasalukuyan kang naka-log in.
+                              <button onclick="exam()">KUMUHA NA NG EXAM</button>
+                              <button onclick="logout()">MAG-LOGOUT</button>
+                         </div>
+                         </div>
+                         <div id="footer">
+                              <p>Copyright &copy; 2017 R J C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   <a href="index.html">INGLES</a>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   <img height=19px; width=19px; src="PNG.png">
+                                   &nbsp;&nbsp;
+                                   <img height=20px; width=40px; src="PHP.png"></p>
+                         </div>
+                    </div>
+                         <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+                                             <script>
+                                               // Initialize Firebase
+                                               var config = {
+                                                 apiKey: "AIzaSyDZy-n6Cg_tzAIwxXs0wC4Nna23Kg5aZgc",
+                                                 authDomain: "ltothesis-cd030.firebaseapp.com",
+                                                 databaseURL: "https://ltothesis-cd030.firebaseio.com",
+                                                 projectId: "ltothesis-cd030",
+                                                 storageBucket: "ltothesis-cd030.appspot.com",
+                                                 messagingSenderId: "683555559035"
+                                               };
+                                                firebase.initializeApp(config);
+                                             var database = firebase.database();
+
+                                             </script>
+                         <script src="script.js"></script>
+     </body>
+</html>
