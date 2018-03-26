@@ -1,0 +1,40 @@
+body {
+     background-image: url("blue.jpg");
+     font-family: 'Work Sans', sans-serif;
+}
+
+#container {
+     border: 1px solid #0000;
+     width: 1000px;
+     height: 6000px;
+     margin-left: 170px;
+     margin-top: 50px;
+}
+
+#left {
+     position: fixed;
+     background-color: white;
+     border: 1px solid black;
+     border-radius: 10px;
+     width: 200px;
+     height: 150px;
+     margin: 0px;
+     float: left;
+}
+
+#right{
+     opacity: 0.8;
+     background-color: white;
+     border: 1px solid black;
+     border-radius: 10px;
+     width: 700px;
+     height: 1000px;
+     margin-left: 250px;
+}
+
+#s {
+     visibility: hidden;
+     border: 1px solid black;
+     height: 100px;
+     width: 100px;
+}

@@ -4,6 +4,7 @@
      <head>
      <link rel="icon" type="image/png" href="Land.png">
      <link rel="stylesheet" type="text/css" href="Registration.css">
+     <!-- FONTS -->
      <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
      <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
      <link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet">
@@ -21,20 +22,25 @@
                <div id="goback">
                     <p><a href="index.html"> GO BACK TO HOMEPAGE </p></a>
                </div>
+               <!-- Leftside contains email, pass, fullname -->
                <div id="leftside">
                     <div class="stanza">
                          <input type=email placeholder="Valid E-mail Address" id="e_mail" required/></br>
                          <input type=password placeholder="Enter your password" id="p_word" required/>
+                         <input type=password placeholder="Confirm your password" id="p_wordd" required/>
                     </div>
                     <div class="stanza">
                          <input type="text" placeholder="Firstname"  id="fname" />
                          <input type="text" placeholder="Lastname"  id="lname" />
                     </div>
                </div>
-
+               <!-- Rightside contains address, contact # -->
                <div id="rightside">
                          <div class="stanza1">
                               <input type="text" placeholder="Address" id="address" />
+                         </div>
+                         <div id="stanza1">
+                              <input type="number" id="score" value='0'>
                          </div>
                          <div class="stanza1">
                               <input type="number" placeholder="  Contact No." id="contact" />
@@ -46,24 +52,20 @@
                </div>
           </div>
                <button type="button" onclick="writeUserData()"> Register now </button>
-               <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-                         <script>
-                           // Initialize Firebase
-                           var config = {
-                             apiKey: "AIzaSyDZy-n6Cg_tzAIwxXs0wC4Nna23Kg5aZgc",
-                             authDomain: "ltothesis-cd030.firebaseapp.com",
-                             databaseURL: "https://ltothesis-cd030.firebaseio.com",
-                             projectId: "ltothesis-cd030",
-                             storageBucket: "ltothesis-cd030.appspot.com",
-                             messagingSenderId: "683555559035"
-                           };
-                           firebase.initializeApp(config);
-                           var database = firebase.database();
-
-
-
-                         </script>
-
+               <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+                                   <script>
+                                     // Initialize Firebase
+                                     var config = {
+                                       apiKey: "AIzaSyDZy-n6Cg_tzAIwxXs0wC4Nna23Kg5aZgc",
+                                       authDomain: "ltothesis-cd030.firebaseapp.com",
+                                       databaseURL: "https://ltothesis-cd030.firebaseio.com",
+                                       projectId: "ltothesis-cd030",
+                                       storageBucket: "ltothesis-cd030.appspot.com",
+                                       messagingSenderId: "683555559035"
+                                     };
+                                     firebase.initializeApp(config);
+                                     var database = firebase.database();
+                                   </script>
                <script src="script.js"></script>
      </body>
 </html>

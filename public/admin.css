@@ -6,10 +6,9 @@ body {
 input {
      font-family: 'Play', sans-serif;
      width: 80%;
-     height: 10%;
+     height: 30px;
      border-radius: 10px;
-     margin-top: 12px;
-     transition: 0.9s;
+     transition: none;
      -moz-box-shadow:inset 0 0 3px #000000;
      text-align-last: center;
 }
@@ -26,9 +25,13 @@ input {
      box-shadow: 0 0 5px 3px #999;
 }
 
+#log{
+     visibility: visible;
+}
+
 #div{
      margin-top: 100px;
-     margin-left: 100px;
+     margin-left: 110px;
 }
 
 #but{
@@ -42,14 +45,18 @@ button:hover {
 
 button {
      font-family: 'Russo One', sans-serif;
+     transition: none;
      background-color: #2794DC;
      font-size: 20px;
      border-radius: 15px;
      color: white;
-     width: 500px;
+     width: 480px;
      height: 50px;
      -webkit-transition: 0.3s;
      -moz-transition: 0.3s;
      cursor: pointer;
-     margin-top: 30px;
+}
+
+#answers{
+     visibility: hidden;
 }

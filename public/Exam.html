@@ -3,30 +3,218 @@
      <title>Exam</title>
      <link rel="icon" type="image/png" href="Land.png">
      <link rel="stylesheet" type="text/css" href="Exam.css">
+     <!-- FONTS -->
      <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+     <script type="text/javascript">
+               var timer = 3600;
+               var min = 0;
+               var sec = 0;
+               function startTimernormal(){
+                    min = parseInt(timer/60);
+                    sec = parseInt(timer%60);
+
+                    if( timer < 1 ){
+                         results();
+                    }
+
+                    document.getElementById("timer").innerHTML = " "+min.toString()+" : "+sec.toString();
+                    timer--;
+                    setTimeout(function(){
+                         startTimernormal();
+                    }, 1000);
+               }
+     </script>
 </head>
-<body>
-     <div id="exam0"></div>
+<body onload="startTimernormal();">
      <div id="container">
-          <div id="insideh1">
-               <h1 id="fname">  </h1>
+          <div id="left">
+               <p id="name">
+               </p>
+               <div id="timer">
+               </div>
+                                                  <div id='aaaa'><input type="button" value="I'm done" onclick="results()"></div>
+                                                  <div id='s'>
+                                                  <p id='nc'></p>
+                                                       <div id="rank"></div>
+                                                  </div>
+          </div>
+          <div id="right">
+               <form id="quiz" name="quiz">
+               </form>
           </div>
      </div>
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
-     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-               <script>
-                 // Initialize Firebase
-                 var config = {
-                   apiKey: "AIzaSyDZy-n6Cg_tzAIwxXs0wC4Nna23Kg5aZgc",
-                   authDomain: "ltothesis-cd030.firebaseapp.com",
-                   databaseURL: "https://ltothesis-cd030.firebaseio.com",
-                   projectId: "ltothesis-cd030",
-                   storageBucket: "ltothesis-cd030.appspot.com",
-                   messagingSenderId: "683555559035"
-                 };
-                 firebase.initializeApp(config);
-                 var database = firebase.database();
+                    <script>
+                 //[question description, option1, option2, option3, option4, answer]
+                 var question_array = [
+                   ["What is the meaning of green traffic light? "," Stop","Prepare to stop","Go","none of the above",3],
+                   ["After overtaking, you want to safely go back to the lane where you where you came from, you should: ","Look at the vehicle you have overtaken","Use the rear view mirror to check the vehicle you have overtaken","Speed up","none of the above",2],
+                   ["Which of the following describes the picture:","Turn left","Turn Right","Straight ahead","none of the above",1,"t3.png"],
+                   ["A driver is considered a Professional driver if:","They are a driver","They have a driver’s license","They are being paid as a driver","none of the above",2],
+                   ["Which of the following describes the picture:","Narrow road with length of 2 meters","2 meters of vertical clearance","2 meters distance ahead","none of the above",2,"t5.png"],
+                   ["What is the meaning of blinking red traffic light?","Speed up","Slow down and proceed with caution","Stop and proceed with caution","none of the above",3],
+                   ["The safest response even if you have rights on the road is:","Fight with other drivers","Speed up","Don’t fight for your rights","none of the above", 4],
+                   ["The safest speed of a vehicle is according to:","Speed limit","The condition of the road, weather, traffic","Vehicle’s performance","Both A and B",4],
+                   ["If you want to drive slower than other vehicles on a highway you should stay on the:","Left lane","Right lane","Shoulder lane","none of the above",2],
+                   ["If the driver of a vehicle in front of you is giving a hand signal and is pointing his hand on the ground, he/she is:","Stopping","Turning left","Turning right","none of the above",1],
+                   ["What is the meaning of blinking yellow traffic light?","Speed up","Slow down and proceed with caution","Stop and proceed with caution","none of the above",2],
+                   ["Which of the following describes the picture:","Debris falling","Landslide","Slippery road","none of the above",2,"t13.png"],
+                   ["If you are going to drive slow on expressway, you should move on the:","Left lane","Middle lane","Right lane","none of the above",3],
+                   ["If the driver of the vehicle in front of you is stretching his left arm out and gives you a hand signal pointing to the left, he will:","Stop","Turn left","Turn right","none of the above",2],
+                   ["Before changing lanes on a highway, you must give a signal for:","For 5 seconds before changing lanes","30m before changing lanes","1 minute before changing lanes","none of the above",3],
+                   ["When should a driver make a decision?","Right away","When he only wants to","When only needed","none of the above",3],
+                   ["Which of the following describes the picture:","No trucks allowed","No jeepneys allowed","No vehicles allowed","none of the above",2,"t18.png"],
+                   ["Before leaving the parking area, you should:","Drive right away","Start your car","Check for surroundings","none of the above",3],
+                   ["What is the meaning of yellow arrow traffic light?","Prepare to stop","To make a turn after yielding to oncoming traffic","Stop and proceed with caution","none of the above",2],
+                   ["Double broken yellow line in the road means:","You are allowed to pass","Slow down","Do not pass/overtake a vehicle","none of the above",3],
+                   ["The vehicle is parked if:","Engines are off","When put to park or neutral","When speeding up","none of the above",2],
+                   ["Which of the following describes the picture:","Swerve on incoming traffic","Give way to oncoming traffic","Stop","none of the above",2,"t24.png"],
+                   ["A driver should give a signal when turning left or right on the road intersection in no less than:","30 meters","1 kilometer","1 meter","none of the above",2],
+                   ["A person who drives under influence of alcohol or drugs is punishable by law with:","The penalty of 3 months imprisonment, and a fine ranging from Php 20,000 to Php 80,000","Revocation of license","Fine of  Php100,000","none of the above",1],
+                   ["If you are caught due to a violation, how many days are given for you to settle your case and get you license back?","7 days","1 month","1 year","none of the above",1],
+                   ["What are white lines in the road for?","Division of lanes","Guide to your destination","Indicates direction and Lanes","none of the above",1],
+                   ["A Non-Professional driver’s license is suited for:","Public utility vehicles","Private use","As an official I.D","none of the above",2],
+                   ["Which of the following describes the picture:","Railroad crossing","Speed bump","Do not cross","none of the above",1,"t30.png"],
+                   ["What should you do when an ambulance comes up behind you flashing red lights and/or sounding its siren?","Give way","Speed up","Stop","none of the above",1],
+                   ["Which of the following describes the picture","Do not pass","Wrong way","1 way direction","none of the above",2,"t32.png"],
+                   ["What is the meaning of yellow traffic light?","To speed up","To slow down","Prepare to stop","none of the above",3],
+                   ["Which of the following describes the picture","Cow","Beware of animals","Animals crossing","none of the above",3,"t34.png"],
+                   ["In which place you are prohibited to park?","Sidewalks, Road, Driveways","Garage","Parking lots","none of the above",1],
+                   ["What is the meaning of green arrow traffic light?","Stop","Proceed to the direction of the arrow","Proceed with caution","none of the above",2],
+                   ["If you are approaching a curve, what should you do?","Slow down","Speed up","Stop","none of the above",1],
+                   ["If you are involved in an accident, you should inform the nearest police station:","Call the ambulance if there are casualties and inform the police","Drive away","Fight with other driver","none of the above",1],
+                   ["Which of the following describes the picture:","Animals crossing ","Slow down","Men at work","none of the above",3,"t39.png"],
+                   ["According to the law, you are not allowed to drive fast, except when:","On highways","Traffic","Stop sign","none of the above",1],
+                   ["What is the meaning of continuous yellow line in the road?","Prohibited from passing other vehicles","You are allowed to pass other vehicles","Stop","none of the above",1],
+                   ["Driving without a license is against the law and punishable with a fine of:","Fine of Php 1,500","Banned from getting a license","Fine of Php 700","none of the above",1],
+                   ["While driving, you should look at your side and rear view mirror:","When changing lanes","When parking","When speeding up","none of the above",1],
+                   ["Which place you should not overtake?","Near hospitals, schools and churches","Highways","Parking lot","none of the above",1],
+                   ["While changing lanes, you should give signal, check your rear view mirror and:","Steer your car immediately","Steer when clear","Look at other drivers","none of the above",2],
+                   ["Which of the following describes the picture:","30 meters ahead","Highway code","Speed limit of 30 Km/h","none of the above",3,"t47.png"],
+                   ["What should you prepare for long trip?","Tools, check your car’s fluids, tires, belongings","Brace yourself","Coffee","none of the above",1],
+                   ["If a vehicle in front of you has a high beam light which is blinding your vision, what should you do?","Turn your high beams on","Look slightly on the other direction","Stop","none of the above",2],
+                   ["The minimum age for the applicant of Professional Driver’s License is:","17 years old","18 years old","19 years old","none of the above",2],
+                   ["If the brake light of the vehicle in front of you lights up, you should:","Prepare to brake the vehicle","Speed up and tailgate","Stop","none of the above",1],
+                   ["When parking uphill and parallel to the sidewalk, you should turn the front wheels","Left","Right","Don't Steer","none of the above",1],
+                   ["What should you bring before driving a vehicle?","Your bag","Car keys","Driver’s license","none of the above",3],
+                   ["What is the meaning of an arrow painted on the road?","The direction where you should follow","Lanes","Division of lanes","none of the above",1],
+                   ["Which of the following describes the picture:","Parking sign","No parking sign","Parking on one side only","none of the above",2,"t56.png"],
+                   ["What is the maximum speed of a vehicle entering a school zone?","100 Km/h","20 Km/h","10Km/h","none of the above",2],
+                   ["Which of the following describes the picture:","Dead end","End of the road ahead","Sea","none of the above",2,"t58.png"],
+                   ["You can overtake in the right side of your vehicle if:","There are two or more lanes available","There is only one lane","The road is One-way","none of the above",1],
+                   ["You are not allowed to overtake at the footbridge because:","There is no shoulder lane","Narrow road","Because footbridge is for people only","none of the above",3],
+                   ["Driving with a fake license is prohibited and punishable by:","Law","You","The police","none of the above",1],
+                   ["There are two incoming vehicles on the street of an intersection with no traffic light, which vehicle has the right of way?","The one who gets to the intersection second","The one who gets to the intersection first","The one who gets to the intersection late","none of the above",2],
+                   ["What is the meaning of a circle, octagon or inverted triangle traffic sign with red border color?","Warning sign","Regulatory sign","Caution sign","none of the above",2],
+                   ["Obtaining a license is:","Is a privilege","Is your right","Is a must","none of the above",1],
+                   ["A continuous parallel double yellow line on the road means:","Passing other vehicles is prohibited","You can overtake other vehicles","You should stop","none of the above",1],
+                   ["Broken white line on the road means:","You can safely change lanes","You are prohibited from overtaking other vehicles","Prohibited from changing lanes","none of the above",1],
+                   ["Which of the following describes the picture:","Narrow road","Curve ahead","Yield","none of the above",1,"t68.png"],
+                   ["Which of the following describes the picture:","People crossing","Animals crossing","Hospital zone","none of the above",1,"t69.png"],
+                   ["Which of the following describes the picture: ","Intersection ahead","Lane merging ahead","One way","none of the above",2,"t70.png"],
+                   ["What should you do to combat fatigue and sleepiness during long road trip?","You should drink coffee","You should speed up to get to the destination faster","Park your car to a safe location and take a nap","none of the above",3],
+                   ["Which of the following describes the picture:","Curve ahead","No parking","Slippery road","none of the above",3,"t72.png"],
+                   ["In a roundabout (rotunda), which has road rights?","The fastest vehicle","The vehicle who is in the roundabou","The slowest vehicle","none of the above",2],
+                   ["What is the meaning of a square or rectangle traffic sign with blue and white color?","Warning sign","Regulatory sign","Information sign","none of the above",3],
+                   ["What should you do if a Traffic Enforcer/Policeman stops you?","Stop and surrender your license and other requirements requested by the policeman","You should speed up","Don’t stop","none of the above",1],
+                   ["If the driver of a vehicle on front of you is giving a hand signal by pointing his left hand upwards, he will surely:","Stop","Turn left","Turn right","none of the above",3],
+                   ["When parking uphill and parallel to the sidewalk, you should turn the wheel:","To the sidewalk curb","Away from the sidewalk curb","Parallel with the sidewalk curb","none of the above",2],
+                   ["You are not allowed to cross a lane with continuous yellow line on the road except if you are:","Turning left","Turning right","Changing lanes","none of the above",1],
+                   ["Which of the following describes the picture:","Steep descent","Steep road","Steep ascent","none of the above",3,"t81.png"],
+                   ["Which of the following describes the picture:","No entry for car","No entry for bus","No entry for power-driven vehicles drawing a trailer","none of the above",3,"t90.png"],
+                   ["Which of the following describes the picture:","Double turn to the left","Double turn to the right","Double turn ahead","none of the above",1,"t91.png"],
+                   ["Which of the following describes the picture:","Slippery road","Bumpy road","Steep road","none of the above",3,"t93.png"],
+                   ["Which of the following describes the picture:","Priority crossroads","First aid station","Railroad crossing","none of the above",1,"t95.png"],
+                   ["Which of the following describes the picture:","No entry for trucks","No entry for bus","No entry for car","none of the above",1,"t96.png"],
+                   ["When a vehicle starts to skid, what should the driver do?","Immediately step on the brakes","Hold firmly on to the wheel while slowing down the vehicle","Turn the wheels tp the opposite the direction of the skid","none of the above",2],
+                   ["In case of injuries caused by an accident, the duty of the uninjured driver is to:","call a physician","keep the victim lying down","try to determine who is at fault","none of the above",1],
+                   ["In case of an accident, the first duty of the driver involved is to:","pick-up the injured person and take him to the nearest hospital","report the accident to the nearest hospital","report the accident to the nearest police station","none of the above",1],
+                   ["What will happen when your front tire blows out?","The back end will sway towards the side of the blowout","The back end will sway away from the blowout","The front end will pull towards the side of the blowout","none of the above",3],
+                   ["What will happen when your rear tire blows out?","The back end will sway towards the side of the blowout","The back end will sway away from the blowout","The front end will pull towards the side of the blowout","none of the above",2],
+                   ["When a vehicle is stalled or disabled, the driver must park the vehicle on the shoulder of the road and:","switch on the parking light","install the early warning device","switch on the parking light and install the Early Warning Device to the front and rear of the motor vehicle","none of the above",3],
+                   ["Which of the following best describes the picture?","Stop","Park","Go","none of the above",1,"t86.jpg"],
+                   ["According to the law, you can’t drive fast except when:","All answers are correct","There is no danger ","You are under the speed limit","none of the above",1],
+                   ["Which of the following best describes the picture?","Intersection","Curve Ahead","Turning Left","none of the above",1,"t100.jpg"],
+                   ["What should you do to combat fatigue and sleepiness during long road trip?","Sleep while driving","Stop every once in a while and rest","Rest in the middle of traffic","none of the above",2],
+                   ["Which of the following best describes the picture?","A circle with a red lining with 60 inside it","Given speed limit","You can overtake on the right or left side if there is no danger","none of the above",2,"t101.jpg"],
+                   ["Turning left is more dangerous than turning right because:","You have to be cautious and aware of incoming vehicles from both left and right sides of the road","It is much more harder to overtake left than right","It is much more harder to overtake right than left","none of the above",1]
+                 ];
+
+                 //Shuffle every questions
+                 shuffle(question_array);
+                 var questions =[];
+
+                 for(let i = 0; i < question_array.length ; i++){
+                   questions.push({
+                     description: question_array[i][0],
+                         option:[
+                            question_array[i][1],
+                           question_array[i][2],
+                            question_array[i][3],
+                            question_array[i][4]
+                          ],
+                         answer:question_array[i][5],
+                         image:question_array[i][6]
+                   });
+                 }
+
+                 for(let i = 0; i < question_array.length ; i++){
+
+                      let question = "";
+                      question += "<div>";
+                      question += "<p>"+(i+1)+".) "+questions[i].description;
+                      if(questions[i].image) question += "</br><img src='"+questions[i].image+"' style='height:150px;width:150px;' />";
+                      question += "</p>";
+                      question += "<div> a.) <input type='radio' id='q"+(i+1)+"' name='q"+(i+1)+"' value='"+(1)+"'/> "+questions[i].option[0]+"</div><br/>"
+                      question += "<div> b.) <input type='radio' id='q"+(i+1)+"' name='q"+(i+1)+"' value='"+(2)+"'/>"+questions[i].option[1]+"</div><br/>"
+                      question += "<div> c.) <input type='radio' id='q"+(i+1)+"' name='q"+(i+1)+"' value='"+(3)+"'/>"+questions[i].option[2]+"</div><br/>"
+                      question += "<div> d.) <input type='radio' id='q"+(i+1)+"' name='q"+(i+1)+"' value='"+(4)+"'/>"+questions[i].option[3]+"</div><br/><br/>";
+                      $("#quiz").append(question);
+
+
+                 }
+                /*$("#left").append("<div id='aaaa'><input id='button' type='button' value='Im done' onclick='results();'></div>");
+                 $("#right").append("<div id='s'>"
+                 +"<p id='nc'></p></div>");*/
+                                   function shuffle(array) {
+                                        var currentIndex = array.length, temporaryValue, randomIndex;
+
+
+                                        while (0 !== currentIndex) {
+
+                                          // Pick a remaining element...
+                                          randomIndex = Math.floor(Math.random() * currentIndex);
+                                          currentIndex -= 1;
+
+                                          // And swap it with the current element.
+                                          temporaryValue = array[currentIndex];
+                                          array[currentIndex] = array[randomIndex];
+                                          array[randomIndex] = temporaryValue;
+                                        }
+                                        return array;
+                                   }
+
+
+
                </script>
-     <script src="script.js"></script>
+               <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+                                   <script>
+                                     // Initialize Firebase
+                                     var config = {
+                                       apiKey: "AIzaSyDZy-n6Cg_tzAIwxXs0wC4Nna23Kg5aZgc",
+                                       authDomain: "ltothesis-cd030.firebaseapp.com",
+                                       databaseURL: "https://ltothesis-cd030.firebaseio.com",
+                                       projectId: "ltothesis-cd030",
+                                       storageBucket: "ltothesis-cd030.appspot.com",
+                                       messagingSenderId: "683555559035"
+                                     };
+                                     firebase.initializeApp(config);
+                                     var database = firebase.database();
+                                   </script>
+               <script src="script.js"></script>
 </body>
 </html>

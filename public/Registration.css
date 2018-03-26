@@ -50,6 +50,10 @@ button {
      margin-top: 30px;
 }
 
+#score {
+     visibility: hidden;
+}
+
 .stanza3 input{
      width: 15px;
      height: 15px;

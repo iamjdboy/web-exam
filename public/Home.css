@@ -134,3 +134,7 @@ p {
      margin-left: 1px;
      padding: 15px;
 }
+
+#answers {
+     visibility: hidden;
+}

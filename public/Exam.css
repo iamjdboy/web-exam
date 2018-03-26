@@ -1,25 +1,90 @@
 body {
      background-image: url("blue.jpg");
      font-family: 'Work Sans', sans-serif;
+     text-align: center;
 }
 
 #container {
-     border-radius: 10px;
-     background-color: white;
-     height: 800px;
+     height: 10800px;
      width: 600px;
-     opacity: 0.4;
-     margin-left: 350px;
+     margin-left: 100px;
 }
 
-#insideh1{
-     border-top-left-radius: 10px;
-     border-top-right-radius: 10px;
-     background-color: #2980B9;
-     color: white;
-     font-family: 'Arvo', serif;
+#left {
+     position: fixed;
+     background-color: white;
+     opacity: 0.8;
+     border: 1px solid black;
+     border-radius: 10px;
+     box-shadow: 0 0 15px 3px #999;
+     width: 200px;
+     height: 160px;
+     float: left;
 }
 
-h1 {
+#right{
+     opacity: 0.9;
+     background-color: #CDF6EF;
+     border: 1px solid black;
+     border-radius: 10px;
+     box-shadow: 0 0 5px 3px #999;
+     width: 900px;
+     height: 24240px;
+     margin-left: 250px;
+}
+
+#s {
+     visibility: hidden;
+     background: white;
+     border: 1px solid black;
+     height: 300px;
+     width: 700px;
+     margin-left: 250px;
+}
+
+#nc {
      text-align: center;
+     font-family: 'Russo One', sans-serif;
+     margin-top: 100px;
+     font-size: 20px;
+     color: blue;
+}
+
+#rank{
+     font-family: 'Russo One', sans-serif;
+     height: 68px;
+     width: 698px;
+     font-size: 25px;
+     text-align: center;
+}
+
+p {
+     color: black;
+     font-family: 'Bitter', serif;
+     text-align: center;
+     font-size: 15px;
+}
+
+#aaaa{
+     margin-top: 20px;
+}
+
+#quiz,#right,#left{
+     visibility: visible;
+}
+
+#timer{
+     font-family: 'Orbitron', sans-serif;
+     height: 50px;
+     width: 150px;
+     margin-top: 10px;
+     margin-left: 25px;
+     font-size: 35px;
+}
+
+#name {
+     font-family: 'Bitter', serif;
+     height: 15px;
+     width: 190px;
+     margin-top: 20px;
 }

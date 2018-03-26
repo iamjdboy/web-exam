@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Exam</title>
+     <link rel="icon" type="image/png" href="Land.png">
+     <link rel="stylesheet" type="text/css" href="exam2.css">
+     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+</head>
+<body>
+     <div id="container">
+          <div id="left">
+          </div>
+          <div id="right">
+
+               <form id="quiz" name="quiz">
+                    <p id = "t1">What is the meaning of green traffic light?</p>
+                         <input type="radio" id="mc" name="q1" value="Stop">Stop<br/>
+                         <input type="radio" id="mc" name="q1" value="Prepare to Stop">Prepare to Stop<br/>
+                         <input type="radio" id="mc" name="q1" value="Go">Go<br/>
+                         <input type="radio" id="mc" name="q1" value="Park">Park<br/>
+
+                    <p id= "t2">After overtaking, you want to safely go back to the lane where you where you came from, you should: </p>
+                         <input type="radio" id="mc" name="q2" value="Look at the vehicle you have overtaken">Look at the vehicle you have overtaken<br/>
+                         <input type="radio" id="mc" name="q2" value="Use the rear view mirror to check the vehicle you have overtaken">Use the rear view mirror to check the vehicle you have overtaken<br/>
+                         <input type="radio" id="mc" name="q2" value="Speed up">Speed up<br/>
+                         <input type="radio" id="mc" name="q2" value="Do nothing">Do nothing<br/>
+
+                    <p id="t3">Which of the following describes the picture:<img src="t3.png" height="60px" width="60px"></p>
+                         <input type="radio" id="mc" name="q3" value="Turn left">Turn left<br/>
+                         <input type="radio" id="mc" name="q3" value="Turn right">Turn right<br/>
+                         <input type="radio" id="mc" name="q3" value="Straight ahead">Straight ahead<br/>
+                         <input type="radio" id="mc" name="q3" value="Hard Left">Hard Left<br/>
+
+                    <p id="t4">A driver is considered a Professional driver if:</p>
+                         <input type="radio" id="mc" name="q4" value="They are a driver">They are a driver<br/>
+                         <input type="radio" id="mc" name="q4" value="They have a driver’s license">They have a driver’s license<br/>
+                         <input type="radio" id="mc" name="q4" value="They are being paid as a driver">They are being paid as a driver<br/>
+                         <input type="radio" id="mc" name="q4" value="They have a car">They have a car<br/>
+
+
+
+
+
+                    <input id="button" type="button" value="I'm done" onclick="results()">
+
+                    <div id="s">
+                    <p id="nc"></p>
+                    </div>
+               </form>
+          </div>
+     </div>
+     <script src="script.js"></script>
+</body>
+</html>

@@ -6,5 +6,27 @@
           <link rel="stylesheet" type="text/css" href="Forgotpass.css">
      </head>
      <body>
+          <div id="s">
+               <div id="div">
+                    <input type="text" placeholder="Valid Email Address" id="text1">
+                    <input type="text" placeholder="Confirm Email Address" id="text2">
+                    <button onclick="submit()">Submit</button>
+               </div>
+          </div>
+          <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+                              <script>
+                                // Initialize Firebase
+                                var config = {
+                                  apiKey: "AIzaSyDZy-n6Cg_tzAIwxXs0wC4Nna23Kg5aZgc",
+                                  authDomain: "ltothesis-cd030.firebaseapp.com",
+                                  databaseURL: "https://ltothesis-cd030.firebaseio.com",
+                                  projectId: "ltothesis-cd030",
+                                  storageBucket: "ltothesis-cd030.appspot.com",
+                                  messagingSenderId: "683555559035"
+                                };
+                                firebase.initializeApp(config);
+                                var database = firebase.database();
+                              </script>
+          <script src="script.js"></script>
      </body>
 </html>
